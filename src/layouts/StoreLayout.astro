@@ -1,0 +1,18 @@
+---
+import BaseHead from "@/components/BaseHead.astro";
+import StoreNavigation from "@/components/global/StoreNavigation.astro";
+import Footer from "@/components/global/Footer.astro";
+---
+
+<html lang="en">
+  <head>
+    <BaseHead />
+  </head>
+  <body class="bg-white flex flex-col min-h-screen">
+    <StoreNavigation />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

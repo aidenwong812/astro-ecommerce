@@ -1,0 +1,30 @@
+---
+import { newarrivals } from "../../data/newarrivals.json";
+---
+
+<section>
+  <div class="2xl:max-w-7xl mx-auto text-center">
+    <div class="px-6 py-3.5 bg-black">
+      <p class="uppercase text-xs text-white">You may also like</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4">
+      {
+        newarrivals.slice(0, 4).map((template) => (
+          <div>
+            <a href={template.url}>
+              <img
+                src={template.image}
+                class=" lg:object-cover aspect-square"
+                alt=""
+              />
+              <div class=" uppercase text-xs text-black p-4 ">
+                <span class="block">{template.description}</span>
+                <span class="block">price {template.price}</span>
+              </div>
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

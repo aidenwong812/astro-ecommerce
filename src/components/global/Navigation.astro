@@ -1,0 +1,85 @@
+<div class="2xl:max-w-7xl 2xl:mx-auto">
+  <div
+    class="w-full bg-black md:max-w-sm text-xs z-50 fixed right-0 2xl:max-w-7xl 2xl:mx-auto">
+    <nav
+      x-data="{ open: false }"
+      class="relative flex flex-col w-full mx-auto items-center justify-between">
+      <div class="inline-flex w-full items-center justify-between p-3 bg-black">
+        <a
+          class="tracking-tight text-white uppercase focus:outline-none focus:ring"
+          href="/">
+          WILLIAMSBURG
+        </a>
+        <button
+          @click="open = !open"
+          class="inline-flex items-center justify-end text-white hover:text-orange-400 focus:outline-none focus:text-white">
+          <svg
+            class="w-5 h-5"
+            stroke="currentColor"
+            fill="none"
+            viewBox="0 0 24 24">
+            <path
+              :class="{'hidden': open, 'inline-flex': !open }"
+              class="inline-flex"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+            <path
+              :class="{'hidden': !open, 'inline-flex': open }"
+              class="hidden"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <ul
+        :class="{'flex': open, 'hidden': !open}"
+        class="flex-col hidden bg-black h-screen border-t border-white flex-1 w-full">
+        <nav role="navigation">
+          <ul class="flex flex-col text-white uppercase divide-y border-b">
+            <li class="p-3"><a href="/system/overview"> overview</a></li>
+            <li class="p-3"><a href="/system/styleguide"> styleguide</a></li>
+            <li class="p-3"><a href="https://lexingtonthemes.lemonsqueezy.com/checkout/buy/0618db8c-ffa9-43da-a152-eb4b744716d6"> Buy WILLIAMSBURG</a></li>
+          </ul>
+        </nav>
+        <nav role="navigation " class="mt-24 grid grid-cols-2">
+          <ul class="flex flex-col text-white uppercase p-3 gap-2">
+            <li>
+              <a href="/forms/contact"> contact</a>
+            </li>
+            <li>
+              <a href="/infopages/terms"> terms</a>
+            </li>
+            <li>
+              <a href="/infopages/Privacy"> privacy</a>
+            </li>
+            <li>
+              <a href="/infopages/cookies"> cookie policy</a>
+            </li>
+            <li>
+              <a href="/forms/newsletter"> Newsletter</a>
+            </li>
+          </ul>
+          <ul class="flex flex-col text-white uppercase p-3 gap-2">
+            <li>
+              <a href="#_"> Twitter</a>
+            </li>
+            <li>
+              <a href="3_"> instagram</a>
+            </li>
+            <li>
+              <a href="#_"> youtube</a>
+            </li>
+            <li>
+              <a href="#_"> facebook</a>
+            </li>
+          </ul>
+        </nav>
+      </ul>
+    </nav>
+  </div>
+</div>

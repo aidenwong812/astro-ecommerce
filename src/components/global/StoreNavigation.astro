@@ -1,0 +1,187 @@
+<div class="2xl:max-w-7xl 2xl:mx-auto">
+  <div class="w-full bg-black md:max-w-sm text-xs z-50 fixed right-0">
+    <nav
+      x-data="{ open: false }"
+      class="relative flex flex-col w-full mx-auto items-center justify-between"
+    >
+      <div class="inline-flex w-full items-center justify-between p-3 bg-black">
+        <a
+          class="tracking-tight text-white uppercase focus:outline-none focus:ring"
+          href="/"
+        >
+          WILLIAMSBURG
+        </a>
+        <button
+          @click="open = !open"
+          class="inline-flex items-center justify-end text-white hover:text-orange-400 focus:outline-none focus:text-white"
+        >
+          <svg
+            class="w-5 h-5"
+            stroke="currentColor"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              :class="{'hidden': open, 'inline-flex': !open }"
+              class="inline-flex"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+            <path
+              :class="{'hidden': !open, 'inline-flex': open }"
+              class="hidden"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div x-data="{ open: false }" class="w-full">
+        <button
+          @click="open = ! open"
+          class="bg-white inline-flex w-full items-center justify-between p-3"
+        >
+          <span class="text-black">ACCOUNT</span>
+          <span class="text-black">Cart (0)</span>
+        </button>
+        <div
+          class="text-white bg-white"
+          x-show="open"
+          @click.outside="open = false"
+        >
+          <div
+            class="p-3 justify-between inline-flex items-center w-full text-black text-xs uppercase"
+          >
+            <span> quantity</span>
+            <span class="inline-flex items-center gap-2 ml-auto font-medium">
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler w-4 h-4 icon-tabler-minus"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M5 12l14 0"></path>
+                </svg>
+              </button>
+              <span>1</span>
+              <button
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler w-4 h-4 icon-tabler-plus"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M12 5l0 14"></path>
+                  <path d="M5 12l14 0"></path>
+                </svg>
+              </button>
+            </span>
+          </div>
+          <div
+            class="grid md:grid-cols-2 lg:divide-x divide-black border-y border-black text-black uppercase text-xs"
+          >
+            <img src="/9.jpeg" alt="" />
+            <div class="flex flex-col h-full justify-between">
+              <div class="flex flex-col gap-2 p-3">
+                <span class="inline-flex items-center justify-between"
+                  ><span>subtotal</span>
+                  <span>$399.00</span></span
+                >
+                <span class="inline-flex items-center justify-between">
+                  <span>tax</span>
+                  <span>$0.00</span>
+                </span>
+                <span class="inline-flex items-center justify-between">
+                  <span>shipping</span>
+                  <span> $0.00</span>
+                </span>
+                <span class="inline-flex items-center justify-between">
+                  <span>total</span>
+                  <span>$399.00</span>
+                </span>
+              </div>
+              <button
+                class="text-white uppercase text-xs justify-between inline-flex items-center mt-10 lg:mt-0 p-3 bg-black"
+                ><span>remove</span>
+                <span>x</span></button
+              >
+            </div>
+          </div>
+          <div class="bg-white p-3 text-black uppercase text-xs">
+            <span>add a note to your order</span>
+            <div>
+              <textarea
+                rows="4"
+                name="comment"
+                id="comment"
+                placeholder="your message here"
+                class="block w-full uppercase border-0 py-1.5 px-0 text-xs text-zinc-900 placeholder:text-zinc-400 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm sm:leading-6"
+              ></textarea>
+            </div>
+          </div>
+          <div class="divide-y divide-blackw-full text-center">
+            <button
+              class="p-3 bg-black hover:bg-orange-500 duration-200 text-white uppercase text-xs w-full"
+              >check out</button
+            >
+            <div class="flex">
+              <a
+                href="/store/cart"
+                class="p-3 bg-white text-black uppercase text-xs w-full"
+                >go to cart</a
+              >
+            </div>
+            <div class="flex">
+              <a
+                href="/store/all-products"
+                class="p-3 bg-white text-black uppercase text-xs w-full"
+                >continue shopping</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+     <div class="w-full">
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="SEARCH..."
+          class="block w-full text-xs border-0 p-3 text-white bg-black  upercase font-light placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm sm:leading-6"
+        />
+     </div>
+
+      <ul
+        :class="{'flex': open, 'hidden': !open}"
+        class="flex-col hidden bg-black h-screen border-t border-white flex-1 w-full"
+      >
+        <nav role="navigation">
+          <ul class="flex flex-col text-white uppercase divide-y border-b">
+            <li class="p-3"><a href="/store/category"> Category page</a></li>
+            <li class="p-3"><a href="/system/overview"> overview</a></li>
+            <li class="p-3"><a href="/system/style-guide"> styleguide</a></li>
+            <li class="p-3">
+              <a
+                href="https://lexingtonthemes.lemonsqueezy.com/checkout/buy/0618db8c-ffa9-43da-a152-eb4b744716d6"
+              >
+                Buy WILLIAMSBURG</a>
+            </li>
+          </ul>
+        </nav>
+      </ul>
+    </nav>
+  </div>
+</div>

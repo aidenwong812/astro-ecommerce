@@ -1,0 +1,28 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+<BaseLayout>
+  <section>
+    <div class="2xl:max-w-7xl mx-auto">
+      <div
+        class="mx-w-xs prose text-xs uppercase prose-headings:text-xs mx-auto py-24">
+        <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
+        <p>{frontmatter.title}</p>
+        <p><em>{frontmatter.description}</em></p>
+        <p>Written by: {frontmatter.author}</p>
+        <div
+          class="flex flex-col divide-y border-y border-black uppercase divide-black text-xs text-black">
+          {
+            frontmatter.tags.map((tag) => (
+              <span class="p-3 not-prose">
+                <a href={`/tags/${tag}`}>{tag}</a>
+              </span>
+            ))
+          }
+        </div>
+        <div class="mt-12"><slot /></div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
